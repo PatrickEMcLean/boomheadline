@@ -27,7 +27,7 @@
 
     %button{:form => "none", :class => "toggle"} toggle
 
-    %script{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.publishable_key, "data-amount" => "2000", "data-description" => "Boom! Headline.", "data-name" => "Boom! Headline."}
+    %script{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.stripe_publishable_key, "data-amount" => "2000", "data-description" => "Boom! Headline.", "data-name" => "Boom! Headline."}
 
 #promo
   %form{ :action => "/promo", :method => "post", :id => "promo"}

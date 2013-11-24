@@ -6,10 +6,11 @@ require 'freshdesk'
 
 enable :logging
 
-set :publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
-set :secret_key, "sk_test_8CTp0hYKpOziGUCBSqQKRdux"
+set :stripe_publishable_key, ENV["STRIPE_PUBLISHABLE_KEY"]
+set :stripe_secret_key, ENV["STRIPE_SECRET_KEY"]
 
-Stripe.api_key = settings.secret_key
+# set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
+# set :stripe_secret_key, "sk_test_8CTp0hYKpOziGUCBSqQKRdux"
 
 
 get '/' do
@@ -19,8 +20,6 @@ end
 
 
 post '/promo' do
-
-
 
   if params[:promo]
     if params[:promocode] == "22"
@@ -33,8 +32,34 @@ post '/promo' do
 end
 
 post '/charge' do
+  begin
+    create_charge
+    create_ticket
+  rescue Exception => e
+    logger.error e
+  end
+  haml :response, :layout => :main
+end
 
+error Stripe::CardError do
+  haml :badcode
+end
 
+def create_charge
+  Stripe.api_key = settings.stripe_secret_key
+  logger.info "Stripe api key"
+  logger.info Stripe.api_key
+  charge = Stripe::Charge.create(
+    :amount => 2000,
+    :currency => "usd",
+    :card => params[:stripeToken],
+    :description => "Boom! Headline."
+  )
+  logger.info "Charge record"
+  logger.info charge.inspect
+end
+
+def create_ticket
   ticket = "\n\n\n"
   ticket += "Their line: #{params[:line]}"
   ticket += "\n\n\n\n"
@@ -49,12 +74,12 @@ post '/charge' do
   ticket += "And consider this: #{params[:whatelse]}"
   ticket += "\n\n\n"
 
-  client = Freshdesk.new(
+  fd = Freshdesk.new(
     "http://boomheadline.freshdesk.com/",
     "patrickemclean@gmail.com",
     "boompassword"
   )
-  client.post_tickets(
+  ticket = fd.post_tickets(
     :email => params[:email],
     :description => ticket,
     :name => params[:name],
@@ -62,24 +87,9 @@ post '/charge' do
     :priority => 2,
     :name => "Joshua Siler"
   )
-  begin
-    charge = Stripe::Charge.create(
-      :amount => 2000,
-      :currency => "usd",
-      :card => params[:stripeToken],
-      :description => "Boom! Headline."
-    )
-  rescue Exception => e
-    logger.info e
-    haml :badcode
-  end
-  haml :response, :layout => :main
-end
 
-error Stripe::CardError do
-  haml :badcode
+  logger.info ticket.inspect
 end
-
 
 
 __END__
