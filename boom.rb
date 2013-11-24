@@ -35,24 +35,24 @@ end
 post '/charge' do
 	
 
-	# ticket = "\n\n\n"
-	# ticket += "Their line: #{params[:line]}"
-	# ticket += "\n\n\n\n"
-	# ticket += "Wants them to: #{params[:what]}"
-	# ticket += "\n\n\n"
-	# ticket += "Is writing for: #{params[:who]}"
-	# ticket += "\n\n\n"
-	# ticket += "With this kind of tone: #{params[:tone]}"
-	# ticket += "\n\n\n"
-	# ticket += "Wants them to: #{params[:what]}"
-	# ticket += "\n\n\n"
-	# ticket += "And consider this: #{params[:whatelse]}"
-	# ticket += "\n\n\n"
+	ticket = "\n\n\n"
+	ticket += "Their line: #{params[:line]}"
+	ticket += "\n\n\n\n"
+	ticket += "Wants them to: #{params[:what]}"
+	ticket += "\n\n\n"
+	ticket += "Is writing for: #{params[:who]}"
+	ticket += "\n\n\n"
+	ticket += "With this kind of tone: #{params[:tone]}"
+	ticket += "\n\n\n"
+	ticket += "Wants them to: #{params[:what]}"
+	ticket += "\n\n\n"
+	ticket += "And consider this: #{params[:whatelse]}"
+	ticket += "\n\n\n"
 
-	# client = Freshdesk.new("http://boomheadline.freshdesk.com/", "patrickemclean@gmail.com", "boompassword") 
+	client = Freshdesk.new("http://boomheadline.freshdesk.com/", "patrickemclean@gmail.com", "boompassword") 
 
 
-	# client.post_tickets(:email => params[:email], :description => ticket, :name => params[:name], :source => 2, :priority => 2, :name => "Joshua Siler")
+	client.post_tickets(:email => params[:email], :description => ticket, :name => params[:name], :source => 2, :priority => 2, :name => "Joshua Siler")
 
 
 	customer = Stripe::Customer.create(:email => params[:stripeEmail], :card  => params[:stripeToken])
