@@ -1,0 +1,99 @@
+
+
+#pay
+  %form{ :action => "/charge", :method => "post", :id =>"pay"}
+   
+    
+      
+        %label{:for => "line"} Your Headline
+        %input{:id => "headline",:type => "text", :name => "line", :class => "text"}     
+     
+      
+        %label{:for => "who"} Who Are You Writing For?
+        %input{:type => "text", :name => "who", :class => "text"}
+      
+      
+        %label{:for => "what"} What do you want them to think/feel?
+        %input{:type => "text", :name => "what", :class => "text"}
+      
+
+      
+        %label{:for => "tone"} What kind of tone should it have?
+        %input{:type => "text", :name => "tone", :class => "text"}
+     
+      
+        %label{:for => "name"} Your Name:
+        %input{:type => "text", :name => "email", :class => "text"}
+
+
+      
+        %label{:for => "email"} Your Email:
+        %input{:type => "text", :name => "email", :class => "text"}
+
+
+      
+        %label{:for => "whatelse"} Anything else we should know?
+      
+        <br>
+
+        %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+
+      #buttonholder
+        %button{:form => "none", :class => "toggle"} toggle
+    
+      %script.stripe-button{"data-amount" => "2000", "data-currency" => "usd", "data-description" => "Boom! Headline. ($20.00)", "data-image" => "/128x128.png", "data-key" => "pk_test_CFehYFpcPnoGuWeZwA6TqrWS", "data-name" => "Demo Site", src: "https://checkout.stripe.com/v2/checkout.js"}
+    :cdata
+
+#promo
+  %form{ :action => "", :method => "post", :id => "promo"}
+    %input{:type => "hidden", :name => "promo", :value => true}
+    %fieldset
+      %ol
+        %li
+          %label{:for => "line"} Your Headline
+          %input{:id => "headline",:type => "text", :name => "line", :class => "text"}     
+       
+        %li
+          %label{:for => "who"} Who Are You Writing For?
+          %input{:type => "text", :name => "who", :class => "text"}
+        
+        %li
+          %label{:for => "what"} What do you want them to think/feel?
+          %input{:type => "text", :name => "what", :class => "text"}
+        
+
+        %li
+          %label{:for => "tone"} What kind of tone should it have?
+          %input{:type => "text", :name => "tone", :class => "text"}
+       
+        %li
+          %label{:for => "name"} Your Name:
+          %input{:type => "text", :name => "email", :class => "text"}
+
+
+        %li
+          %label{:for => "email"} Your Email:
+          %input{:type => "text", :name => "email", :class => "text"}
+
+
+        %li
+          %label{:for => "whatelse"} Anything else we should know?
+        
+          <br>
+
+          %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+
+        %li
+          %label{:for => "promocode"} Promo Code
+          %input{:type => "text", :name => "promocode", :class => "text"}
+
+        #buttonholder
+          %button{:form => "none", :class => "toggle"} toggle
+
+        %button submit
+
+
+
+
+
+     

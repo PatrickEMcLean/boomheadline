@@ -1,0 +1,49 @@
+
+
+%h1 Stop HamlPromoTime
+
+%form{ :action => "", :method => "post"}
+  %input{:type => "hidden", :name => "promo", :value => true}
+  %fieldset
+    %ol
+      %li
+        %label{:for => "line"} Your Headline
+        %input{:id => "headline",:type => "text", :name => "line", :class => "text"}     
+     
+      %li
+        %label{:for => "who"} Who Are You Writing For?
+        %input{:type => "text", :name => "who", :class => "text"}
+      
+      %li
+        %label{:for => "what"} What do you want them to think/feel?
+        %input{:type => "text", :name => "what", :class => "text"}
+      
+
+      %li
+        %label{:for => "tone"} What kind of tone should it have?
+        %input{:type => "text", :name => "tone", :class => "text"}
+     
+      %li
+        %label{:for => "name"} Your Name:
+        %input{:type => "text", :name => "email", :class => "text"}
+
+
+      %li
+        %label{:for => "email"} Your Email:
+        %input{:type => "text", :name => "email", :class => "text"}
+
+
+      %li
+        %label{:for => "whatelse"} Anything else we should know?
+      
+        <br>
+
+        %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+
+      %li
+        %label{:for => "promocode"} Promo Code
+        %input{:type => "text", :name => "promocode", :class => "text"}
+
+
+      %button submit
+

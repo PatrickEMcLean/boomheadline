@@ -1,0 +1,95 @@
+
+#pay
+  %form{ :action => "/charge", :method => "post", :id =>"pay"}
+         
+    %p Your Headline
+    %input{:id => "headline",:type => "text", :name => "line", :class => "text"}     
+ 
+  
+    %p{:for => "who"} Who Are You Writing For?
+    %input{:type => "text", :name => "who", :class => "text"}
+  
+  
+    %p{:for => "what"} What do you want them to think/feel?
+    %input{:type => "text", :name => "what", :class => "text"}
+  
+
+  
+    %p{:for => "tone"} What kind of tone should it have?
+    %input{:type => "text", :name => "tone", :class => "text"}
+ 
+  
+    %p{:for => "name"} Your Name:
+    %input{:type => "text", :name => "email", :class => "text"}
+
+
+  
+    %p{:for => "email"} Your Email:
+    %input{:type => "text", :name => "email", :class => "text"}
+
+
+  
+    %p{:for => "whatelse"} Anything else we should know?
+  
+    <br>
+
+    %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+
+    
+    %button{:form => "none", :class => "toggle"} toggle
+
+    %script{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.publishable_key, "data-amount" => "2000", "data-description" => "Boom! Headline.", "data-name" => "Boom! Headline."}
+
+#promo
+  %form{ :action => "/promo", :method => "post", :id => "promo"}
+    %input{:type => "hidden", :name => "promo", :value => true}
+    %fieldset
+      %ol
+        %li
+          %label{:for => "line"} Your Headline
+          %input{:id => "headline",:type => "text", :name => "line", :class => "text"}     
+       
+        %li
+          %label{:for => "who"} Who Are You Writing For?
+          %input{:type => "text", :name => "who", :class => "text"}
+        
+        %li
+          %label{:for => "what"} What do you want them to think/feel?
+          %input{:type => "text", :name => "what", :class => "text"}
+        
+
+        %li
+          %label{:for => "tone"} What kind of tone should it have?
+          %input{:type => "text", :name => "tone", :class => "text"}
+       
+        %li
+          %label{:for => "name"} Your Name:
+          %input{:type => "text", :name => "email", :class => "text"}
+
+
+        %li
+          %label{:for => "email"} Your Email:
+          %input{:type => "text", :name => "email", :class => "text"}
+
+
+        %li
+          %label{:for => "whatelse"} Anything else we should know?
+        
+          <br>
+
+          %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+
+        %li
+          %label{:for => "promocode"} Promo Code
+          %input{:type => "text", :name => "promocode", :class => "text"}
+
+        #buttonholder
+          %button{:form => "none", :class => "toggle"} toggle
+
+        %button submit
+
+
+
+
+
+     

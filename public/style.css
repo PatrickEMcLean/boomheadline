@@ -1,0 +1,640 @@
+/*=================================*/
+/* Pico Default Theme
+/* By: Gilbert Pellegrom
+/* http: //dev7studios.com
+/*=================================*/
+
+
+/* Reset Styles
+/*---------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	
+
+}
+
+
+
+
+body {
+
+	color: black;
+	background: white;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 15;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button {
+	cursor: pointer;
+}
+
+/* make buttons play nice in IE:	 
+		www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+	width: auto;
+	overflow: visible;
+}
+
+/* Sharper Thumbnails */
+img {
+	display:block;
+	-ms-interpolation-mode: bicubic;
+	margin:auto;
+	width:100%;
+}
+
+/* Input Styles
+/*---------------------------------------------*/
+
+input,
+textarea,
+select {
+	padding: 5px;
+	font: 400 1em Verdana, Sans-serif;
+	color: #666;
+	background: #fff;
+	border: 1px solid #999999;
+	margin: 0 0 1em 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	color: #000;
+	background: #fff;
+	border: 1px solid #666666;
+	border-width: 0px 0px 1px 0px; 
+}
+
+input {
+	background-color: transparent; 
+	border-style: solid; 
+	border-width: 0px 0px 1px 0px; 
+	border-color: darkred
+}
+
+input:focus {
+	border-width: 0px 0px 1px 0px; 
+	outline:none;
+
+}
+
+/* Main Styles
+/*---------------------------------------------*/
+
+body {
+
+	font-family: 'Libre Baskerville', serif;
+	font-size: 110%;
+	line-height: 1;
+	color: black;
+	background: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+
+p {
+	max-width: 38em;
+}
+
+#content {
+	font-size:90%;
+	letter-spacing:-.02em;
+}
+ 
+
+a, a:visited {
+	color: red;
+	text-decoration: none;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+a:hover, a:active {
+	color: grey;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+	line-height: 1.2em;
+	margin-bottom: 0.6em;
+	font-family: 'Libre Baskerville', serif;
+	text-align: left;
+
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+
+}
+
+h3 {
+	font-size: 1.8em;
+	font-weight: bold;
+	padding-top: 1em;
+	padding-bottom: .5em;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin-top: 1.5em;
+	margin-bottom: 1.8em;
+	padding-top: 1em;
+	padding-left:.1em;
+	text-align: left;
+	font-weight: bold;
+	line-height: 2em;
+}
+
+h4 {
+	font-size: .75em;
+	margin-top: 5em;
+	margin-bottom: .5em;
+	text-align: left;
+	font-style: italic;
+
+	
+}
+
+p {
+	margin-bottom: 1em;
+	margin-top: 1em;
+	line-height: 1.7em;
+	font-size: 1.1em;
+	text-align: left;
+
+
+}
+
+
+ol {
+	margin-bottom: .5em;
+	margin-left: 1.7em;
+	line-height: 1.2em;
+
+
+}
+
+li {
+	margin-bottom: 1.5em;
+	line-height: 1.5em;
+}
+
+
+ul {
+	padding-left: 3em;
+	padding-right: 3em;
+	margin-bottom: .5em;
+	list-style-type: bullet;
+	margin: auto;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+i, em {
+	font-style: italic;
+}
+
+u {
+	text-decoration: underline;
+}
+
+abbr, acronym {
+	cursor: help;
+	border-bottom: 0.1em dotted;
+}
+
+td, td img {
+	vertical-align: top;
+}
+
+
+
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   top: -0.6em;
+   font-size: .75em;
+   padding-left: .2em;
+}
+
+sub { top: 0.4em; }
+
+
+
+code {
+	font-family: Courier, "Courier New", Monaco, Tahoma;
+	background: #eee;
+	color: #333;
+	padding: 0px 2px;
+}
+
+pre {
+	background: #eee;
+	padding: 20px;
+	margin-bottom: 1em;
+	overflow: auto;
+}
+
+blockquote {
+	font-style: italic;
+	margin: 0 0 1em 15px;
+	padding-left: 10px;
+	border-left: 5px solid #dddddd;
+	font-size: .75em;
+}
+
+textarea {
+	width:46px;
+
+}
+
+.ss-form {
+	margin-top: 1.5em;
+	margin-left: -1.5em;
+}
+
+input {
+	
+	margin-top: 10px;
+}
+
+input[type=text] {
+	width:25em;
+
+}
+
+input[type=email] {
+	width:25em;
+}
+
+
+
+
+#menu {
+	
+	text-align: right;
+	padding-bottom: 3em;
+	font-size: 1.5em;
+	
+
+
+}
+
+#menu ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+#menu li {
+
+	display:inline;
+	padding: .5em;
+
+}
+
+
+
+
+.embed-container {
+    position: relative;
+    padding-bottom: 75% ; /* 75%=4:3; 56.25% =16/9 ratio */
+    padding-top: 30px; /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    
+}
+
+
+.videolimit {
+	max-width: 475px;
+	margin: auto;
+}
+
+
+.tutorialpart {
+	margin:auto;
+	text-align: center;
+}
+
+.year  {
+		
+	font-size: 1.1em;
+	margin-top: 1.5em;
+	margin-bottom: .5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	color:black;
+	text-align: center;
+	font-style: italic;
+
+
+
+}
+
+.imageholder {
+	max-width: 450px;
+	margin:auto;
+
+}
+
+.footnotes{
+	font-size: 70%;
+	padding-top: 3em;
+
+}
+
+.footnotes hr {
+	
+}
+
+
+
+
+
+.center {
+
+	margin: 0 auto;
+	padding-bottom: 1em;
+}
+
+
+
+
+
+
+
+/* Structure Styles
+/*---------------------------------------------*/
+.inner {
+	max-width: 700px;
+	margin: 0 auto;
+
+}
+
+#header {
+	text-align: center;
+	padding: 10px 0;
+	margin-top:3em;
+	font-size: 45%;
+	color: black;
+	line-height: 1.2em;
+	margin-bottom:0em;
+
+}
+
+
+#header a { color: black; }
+#header a:hover { color: red; }
+#header h1 { 
+	margin-top: .10em;
+	margin-bottom: .20em;
+	font-size: 7em;
+	font-weight: normal;
+}
+
+#header .beta a {
+	font-weight: normal;
+	font-size: 30%;
+	color:red;
+	position: relative;
+	top:-40px;
+	left:-25px;
+
+}	
+
+#header .beta a:hover{
+	color:grey;
+}
+
+
+
+#header .nav {
+	
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#header .nav li { display: inline-block; }
+#header .nav a {
+	
+}
+
+#header .headertype {
+	line-height: 1.3em;
+	font-size: 110%
+
+}
+
+#header .headertype a {
+
+	 color: red; 
+}
+
+#header .headertype a:hover {
+
+	 color: grey; 
+}
+
+#footer {
+	/*background: #707070;*/
+	padding: 30px 0;		
+	/*margin-top: 80px;*/
+	color: grey;
+}
+#footer a { color: red; }
+#footer a:hover { color: grey; }
+
+#footer .fineprint {
+	font-size: .6em;
+}
+
+
+/* Video and Audio Wrappers
+/*---------------------------------------------*/
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+/* Misc Styles
+/*---------------------------------------------*/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+@media all and (max-width: 1024px) {
+	
+	.inner { width:92%;
+		     margin: 0 auto;
+		 }
+
+
+    .left { float: left;
+		
+		text-align:right;
+
+			}
+
+	.right { float: right;
+		
+		 text-align:left;
+
+			}
+
+
+
+
+}
+
+@media all and (max-width: 640px) {
+
+	body{ font-size:75%;}
+
+	.inner { width:92%;
+		     margin: 0 auto;
+		}
+
+	img {
+			max-width: 100%;
+			height: auto;
+		}
+
+#header .beta a {
+	font-weight: normal;
+	font-size: 30%;
+	color:red;
+	position: fixed;
+
+
+}	
+
+
+#footer .fineprint {
+	font-size: .5em;
+}
+
+
+#header .beta a:hover{
+	color:grey;
+
+}
+	
+
+	.aside{
+		clear:both;
+		font-style: italic;
+		font-size: 100%;
+		max-width: 75px;
+		line-height: 1.5em;
+		z-index:20;
+
+		}
+
+textarea {
+	width:340px;
+
+}
+
+h2 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.searchblob {
+	width:250px;
+}
+
+
+.vertheroimage {
+	width: 200px;
+	margin: 0 auto;
+	padding-bottom: 1em;
+
+}
+
+
+
+
+		}
+}
+
