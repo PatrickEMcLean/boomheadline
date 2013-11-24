@@ -15,3 +15,9 @@
 %h3 
 	Token
 	- params[:stripeToken]
+
+/ - customer = Stripe::Customer.create(:email => params[:stripeEmail], :card  => params[:stripeToken])
+
+/ - charge = Stripe::Charge.create(:amount => 2000, :currency => "usd", :card => params[:stripeToken], :description => "Boom! Headline.")
+
+/      

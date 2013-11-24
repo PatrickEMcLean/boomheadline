@@ -1,0 +1,23 @@
+
+
+
+     
+
+%h1 Response
+
+%p=charge
+
+- params.each do | key, value |
+	%p= key + " --- " + value
+	%hr
+
+
+
+
+
+"#{params[:email]}"
+
+%h3 
+	Token
+	- params[:stripeToken]
+

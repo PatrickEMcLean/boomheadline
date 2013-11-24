@@ -1,0 +1,35 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    freshdesk (0.1)
+      nokogiri
+      rest-client
+    haml (4.0.4)
+      tilt
+    mime-types (2.0)
+    mini_portile (0.5.2)
+    multi_json (1.8.2)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    rack (1.5.2)
+    rack-protection (1.5.1)
+      rack
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    stripe (1.8.8)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+    tilt (1.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  freshdesk
+  haml (~> 4.0.4)
+  sinatra (~> 1.4.4)
+  stripe (~> 1.8.8)

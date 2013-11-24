@@ -1,16 +1,16 @@
 require 'sinatra'
 require 'stripe'
-require 'rubygems'
 require 'haml'
 require 'freshdesk'
-require 'sinatra/formkeeper'
+
 
 enable :logging
 
-set :publishable_key, 'pk_test_CFehYFpcPnoGuWeZwA6TqrWS'
-set :secret_key, 'sk_test_8vCYhVcbcpt0KlxTxIEjgnvA'
+set :publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
+set :secret_key, "sk_test_8CTp0hYKpOziGUCBSqQKRdux"
 
-Stripe.api_key = 'sk_test_8vCYhVcbcpt0KlxTxIEjgnvA'
+
+Stripe.api_key = settings.secret_key
 
 get '/' do 
 	haml :form, :layout => :main
@@ -54,12 +54,22 @@ post '/charge' do
 
 	client.post_tickets(:email => params[:email], :description => ticket, :name => params[:name], :source => 2, :priority => 2, :name => "Joshua Siler")
 
-
-	customer = Stripe::Customer.create(:email => params[:stripeEmail], :card  => params[:stripeToken])
-
+	logger.info "params, bitches"
+	logger.info params
+	logger.info "client.inspect"
+	logger.info client.inspect
+	logger.info "Stripe api key"
+	logger.info Stripe.api_key
+	begin
 	charge = Stripe::Charge.create(:amount => 2000, :currency => "usd", :card => params[:stripeToken], :description => "Boom! Headline.")
+	rescue Exception => e
+	  logger.info e
+	end
+	logger.info charge.inspect
+
 
 	haml :response, :layout => :main
+	
 end
 
 error Stripe::CardError do
