@@ -6,8 +6,8 @@ require 'freshdesk'
 
 enable :logging
 
-set :stripe_publishable_key, ENV["STRIPE_PUBLISHABLE_KEY"]
-set :stripe_secret_key, ENV["STRIPE_SECRET_KEY"]
+set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
+set :stripe_secret_key, "sk_test_3UqpOIA4twxvA33Y1VQmLjOq"
 
 # set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
 # set :stripe_secret_key, "sk_test_8CTp0hYKpOziGUCBSqQKRdux"
@@ -84,8 +84,7 @@ def create_ticket
     :description => ticket,
     :name => params[:name],
     :source => 2,
-    :priority => 2,
-    :name => "Joshua Siler"
+    :priority => 2
   )
 
   logger.info ticket.inspect
