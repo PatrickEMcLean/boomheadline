@@ -1,0 +1,21 @@
+#subhead
+	You send us a line. <br>
+	We'll send you a better one back. <br>
+	Great copywriting, fast and easy.
+
+.row
+	#video
+		.subhead
+			Like this:
+	#workbook
+		.subhead
+			Use our free workbook:
+
+
+.row
+	%subhead Try it
+
+	%form{:action => "/entice", :method => "post", :id =>"entice"}
+		%textarea.headline{:cols => 75, :name => "line"} 
+		%button.boom BOOM!
+

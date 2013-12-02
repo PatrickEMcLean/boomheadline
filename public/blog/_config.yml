@@ -1,0 +1,5 @@
+name: Boom! Headline.
+markdown: redcarpet
+pygments: true
+permalink: /blog/:title
+baseurl: /blog 
