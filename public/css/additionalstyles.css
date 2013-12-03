@@ -1,0 +1,206 @@
+/*=================================*/
+/* Boom Headline Theme
+/* By: Patrick E. McLean
+/*=================================*/
+
+
+/* Main Styles
+/*---------------------------------------------*/
+
+
+body {
+	font-family: 'Questrial', sans-serif;
+}
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+	line-height: 1.2em;
+	margin-bottom: 0.6em;
+	font-family: 'Questrial', serif;
+	text-align: left;
+
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+
+}
+
+h3 {
+	font-size: 1.5em;
+
+}
+
+h2 {
+	font-size: 1.5em;
+	margin-top: 1.5em;
+	margin-bottom: 1.8em;
+	padding-top: 1em;
+	padding-left:.1em;
+	text-align: left;
+	font-weight: bold;
+	line-height: 2em;
+}
+
+h4 {
+	font-size: .75em;
+	margin-top: 5em;
+	margin-bottom: .5em;
+	text-align: left;
+	font-style: italic;
+
+	
+}
+
+
+
+/* Header Styles
+/*---------------------------------------------*/
+
+
+
+#header {
+	text-align: center;
+	padding: 10px 0;
+	margin-top:3em;
+	font-size: 45%;
+	color: black;
+	line-height: 1.2em;
+	margin-bottom:0em;
+}
+
+
+
+
+#subheader {
+	padding-bottom: 2.5em;
+	padding-top: .5em;
+	font-size: 1.8em;
+	line-height: 1.1em;
+}
+
+#subheader li {
+
+	line-height: 1.2em;
+}
+
+.center	{
+	
+	text-align: center;
+}
+
+/* Input Styles
+/*---------------------------------------------*/
+
+.boom {
+
+	margin:auto;
+	text-align: center;
+}
+
+
+#pay form input {
+	width: 800px;
+	height: 2em;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	font-size: 1.3em;
+	font: 400 2em "Libre Baskerville", serif;
+}
+
+#pay form input:focus select:focus {
+	
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#pay p {
+	padding-top: 1.4em;
+}
+
+#pay form input:focus {
+
+	border :none;
+}
+
+#promo form input {
+	width: 800px;
+	height: 2em;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	font-size: 1.3em;
+	font: 400 2em "Libre Baskerville", serif;
+}
+
+#promo form input:focus select:focus {
+	
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#promo p {
+	padding-top: 1.4em;
+}
+
+#promo form input:focus {
+
+	border :none;
+}
+
+
+
+#input-section {
+	padding-top: 5em;
+}
+
+button {
+	font-size: 4em;
+}
+
+button.toggle {
+	font-size:inherit;
+}
+
+input,
+textarea,
+select {
+	padding: 5px;
+	font: 400 3em "Libre Baskerville", serif;
+	color: #666;
+	background: #fff;
+	border: 4px solid #999999;
+	margin: 0 0 1em 0;
+	width: 800px;
+	height:200px;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+	color: #000;
+	background: #fff;
+	border: 1px solid #666666;
+	border-width: 0px 0px 1px 0px; 
+}
+
+input {
+	background-color: transparent; 
+	border-style: solid; 
+	border-width: 0px 0px 1px 0px; 
+	border-color: darkred
+}
+
+input:focus {
+	border-width: 0px 0px 1px 0px; 
+	outline:none;
+
+}

@@ -1,39 +1,62 @@
 
 %html
- %head
-  %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"} 
+  %head
+  
  
-  <link rel="stylesheet" href="/style.css" type="text/css" />
 
-  <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
-	
-  / <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet' type='text/css'>
+  / <!-- CSS
+  / ================================================== 
+  
+  / <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/skeleton.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/additionalstyles.css">
+  
+  / Fonts
+  / ================================================== 
+  
+  <link href='http://fonts.googleapis.  com/css?family=Libre+Baskerville:400,700,400italic'   rel='stylesheet' type='text/css'>
+  
+  <link href='http://fonts.googleapis.  com/css?family=Open+Sans:400italic,400,800,700' rel='stylesheet'   type='text/css'>
+  
+  
+  <link href='http://fonts.googleapis.com/css?family=Questrial'   rel='stylesheet' type='text/css'>
+  
+  / font-family: 'Questrial', sans-serif;
+  
+  /  Scripts
+  / ================================================== 
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,800,700' rel='stylesheet' type='text/css'>
+  %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"} 
 
   %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"} 
 
   %script
 
-   $(document).ready(function() {
-   $("#promo").hide();
+    $(document).ready(function() {
+    $("#promo").hide();
 
-   $(".toggle").click(function(){
-   $("#pay").toggle();
-   $("#promo").toggle();
+    $(".toggle").click(function(){
+    $("#pay").toggle();
+    $("#promo").toggle();
 
-   });
-   });
+    });
+    });
+
+  #maincontain.sixteen.columns
+    .container
+      %header{:id => "header"}
+     
+        %a{:href => "/"}
+          %img(src="/images/boomlogo.png")
 
 
- .inner
-  %header{:id => "header"}
-   <h1><a href="/">Boom! Headline.</a><span class="beta"> <a href="{{ base_url }}/alpha">alpha</a></span></h1>
+    %body
+      .container.sixteen.columns
+        %section{:id => "content"}	
+          =yield
 
+    %footer.sixteen.columns
+      %p This is a footer.
 
-  %body
-   %section{:id => "content"}	
-    =yield
-
-  %footer
-   %p This is a footer.

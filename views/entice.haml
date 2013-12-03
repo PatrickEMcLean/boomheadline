@@ -1,72 +1,85 @@
-#pay
+%script
+  jQuery(function($) {
+  var PayHeadline = $('#payheadline');
+  var PayWho = $('#paywho');
+
+  PromoHeadline = $('#promoheadline');
+  PromoWho = $('#promowho');
+
+  PayHeadline.keyup(function(e) {
+  PromoHeadline.text(PayHeadline.val()); });
+
+  PayWho.keyup(function(e) {
+  PromoWho.text(PayWho.val());  });
+  });
+
+  / http://jsfiddle.net/jmmoze/3dMqU/5/
+
+#pay.offset-by-one
   %form{ :action => "/charge", :method => "post", :id =>"pay"}
- 
 
     %p Your Headline
-    %textarea{:id => "headline",:type => "text", :name => "line", :class => "text"} #{params[:line]}
+    %textarea#payheadline{:id => "headline",:type => "text", :name => "line", :class => "text"} #{params[:line]}
 
     %p{:for => "who"} Who Are You Writing For?
-    %input{:type => "text", :name => "who", :class => "text"}
+    %input#paywho{:type => "text", :name => "who", :class => "text"}
 
     %p{:for => "what"} What do you want them to think/feel?
-    %input{:type => "text", :name => "what", :class => "text"}
+    %input#paywhat{:type => "text", :name => "what", :class => "text"}
 
     %p{:for => "tone"} What kind of tone should it have?
-    %input{:type => "text", :name => "tone", :class => "text"}
+    %input#paytone{:type => "text", :name => "tone", :class => "text"}
 
     %p{:for => "name"} Your Name:
-    %input{:type => "text", :name => "name", :class => "text"}
+    %input#payname{:type => "text", :name => "name", :class => "text"}
 
     %p{:for => "email"} Your Email:
-    %input{:type => "text", :name => "email", :class => "text"}
+    %input#payemail{:type => "text", :name => "email", :class => "text"}
 
     %p{:for => "whatelse"} Anything else we should know?
-    <br>
 
-    %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+    %textarea#paywhatelse{:type => "text", :cols => "65", :name => "whatelse", :class => "text"} 
 
-    %button{:form => "none", :class => "toggle"} toggle
+    %button{:form => "none", :class => "toggle"} Enter Trial Code 
 
     %script{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.stripe_publishable_key, "data-amount" => "2000", "data-description" => "Boom! Headline.", "data-name" => "Boom! Headline."}
 
-#promo
+#promo.offset-by-one
   %form{ :action => "/promo", :method => "post", :id => "promo"}
-    %input{:type => "hidden", :name => "promo", :value => true}
-    %fieldset
-      %ol
-        %li
-          %label{:for => "line"} Your Headline
-          %input{:id => "headline",:type => "text", :name => "line", :class => "text"}     
+    %input{:type => "hidden", :name => "promo", :value => true}  
+        
+    %p{:for => "line"} Your Headline
+    %input#promoheadline{:id => "headline",:type => "text", :name => "line", :class => "text"} #{params[:line]}   
 
-        %li
-          %label{:for => "who"} Who Are You Writing For?
-          %input{:type => "text", :name => "who", :class => "text"}
 
-        %li
-          %label{:for => "what"} What do you want them to think/feel?
-          %input{:type => "text", :name => "what", :class => "text"}
+    %p{:for => "who"} Who Are You Writing For?
+    %input#promowho{:type => "text", :name => "who", :class => "text"}
 
-        %li
-          %label{:for => "tone"} What kind of tone should it have?
-          %input{:type => "text", :name => "tone", :class => "text"}
 
-        %li
-          %label{:for => "name"} Your Name:
-          %input{:type => "text", :name => "email", :class => "text"}
+    %p{:for => "what"} What do you want them to think/feel?
+    %input#promowhat{:type => "text", :name => "what", :class => "text"}
 
-        %li
-          %label{:for => "email"} Your Email:
-          %input{:type => "text", :name => "email", :class => "text"}
 
-        %li
-          %label{:for => "whatelse"} Anything else we should know?
-          <br>
-          %textarea{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
-        %li
-          %label{:for => "promocode"} Promo Code
-          %input{:type => "text", :name => "promocode", :class => "text"}
+    %p{:for => "tone"} What kind of tone should it have?
+    %input#promotone{:type => "text", :name => "tone", :class => "text"}
 
-        #buttonholder
-          %button{:form => "none", :class => "toggle"} toggle
 
-        %button submit
+    %p{:for => "name"} Your Name:
+    %input#promoname{:type => "text", :name => "email", :class => "text"}
+
+
+    %p{:for => "email"} Your Email:
+    %input#promoemail{:type => "text", :name => "email", :class => "text"}
+
+
+    %p{:for => "whatelse"} Anything else we should know?
+    <br>
+    %textarea#promowhatelse{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+
+    %p{:for => "promocode"} Enter Promo Code Here:
+    %input{:type => "text", :name => "promocode", :class => "text"}
+
+
+    %button{:form => "none", :class => "toggle"} Pay with Card
+
+    %button.toggle Submit with Trial Code

@@ -1,21 +1,30 @@
-#subhead
-	You send us a line. <br>
-	We'll send you a better one back. <br>
-	Great copywriting, fast and easy.
 
-.row
-	#video
-		.subhead
-			Like this:
-	#workbook
-		.subhead
-			Use our free workbook:
+#subheader.eight.columns.offset-by-four
+	%ol
+		%li You send us a line.
+		%li We'll send you a better one back.
+		%li Expert copywriting, fast and easy.
 
 
-.row
-	%subhead Try it
+#resource-section
+	
+	#video.five.columns.left.offset-by-two
+		%h3	Example:
+		<iframe width="266" height="200" src="//www.youtube.com/embed/MxoWkgkPSiY" frameborder="0" allowfullscreen></iframe>
 
-	%form{:action => "/entice", :method => "post", :id =>"entice"}
-		%textarea.headline{:cols => 75, :name => "line"} 
-		%button.boom BOOM!
+	
+	#workbook.five.columns.right.offset-by-one
+		%h3 Helpful E-book:
+		%a{:href => "/"}
+			%img(src="/images/workbook.png")
+
+
+#other-section
+	#input-section.eleven.columns.offset-by-two
+		%h3 Put your headline right here.
+
+		%form{:action => "/entice", :method => "post", :id =>"entice"}
+			%textarea.mainheadline{:cols => 130, :name => "line"}
+			.boom 
+				%button BOOM!
 

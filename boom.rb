@@ -2,6 +2,8 @@ require 'sinatra'
 require 'stripe'
 require 'haml'
 require 'freshdesk'
+# require 'httparty'
+# require 'haml-contrib'
 
 
 enable :logging
@@ -9,11 +11,6 @@ enable :logging
 set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
 set :stripe_secret_key, "sk_test_3UqpOIA4twxvA33Y1VQmLjOq"
 
-
-
-
-# set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
-# set :stripe_secret_key, "sk_test_8CTp0hYKpOziGUCBSqQKRdux"
 
 
 get '/' do
@@ -40,6 +37,10 @@ post '/entice' do
   haml :entice, :layout => :main
 end
 
+get '/entice' do
+  haml :entice, :layout => :main
+end
+
 post '/promo' do
 
   if params[:promo]
@@ -51,7 +52,7 @@ post '/promo' do
     end
   end
 
-  def create_ticket
+  def create_ticket   
   ticket = "\n\n\n"
   ticket += "Their line: #{params[:line]}"
   ticket += "\n\n\n\n"
@@ -154,7 +155,6 @@ def code_is_valid?(code)
   codes.each do |line|
     codesarray.push(line.chomp)
   end
-
 
   codesarray.each do |validcode|
     if code == validcode
