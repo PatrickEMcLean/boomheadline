@@ -18,27 +18,27 @@
 #pay.offset-by-one
   %form{ :action => "/charge", :method => "post", :id =>"pay"}
 
-    %p Your Headline
+    %h3 Your Headline
     %textarea#payheadline{:id => "headline",:type => "text", :name => "line", :class => "text"} #{params[:line]}
 
-    %p{:for => "who"} Who Are You Writing For?
+    %h3{:for => "who"} Who Are You Writing For?
     %input#paywho{:type => "text", :name => "who", :class => "text"}
 
-    %p{:for => "what"} What do you want them to think/feel?
+    %h3{:for => "what"} What do you want them to think/feel?
     %input#paywhat{:type => "text", :name => "what", :class => "text"}
 
-    %p{:for => "tone"} What kind of tone should it have?
+    %h3{:for => "tone"} What kind of tone should it have?
     %input#paytone{:type => "text", :name => "tone", :class => "text"}
 
-    %p{:for => "name"} Your Name:
+    %h3{:for => "name"} Your Name:
     %input#payname{:type => "text", :name => "name", :class => "text"}
 
-    %p{:for => "email"} Your Email:
+    %h3{:for => "email"} Your Email:
     %input#payemail{:type => "text", :name => "email", :class => "text"}
 
-    %p{:for => "whatelse"} Anything else we should know?
+    %h3{:for => "whatelse"} Anything else we should know?
 
-    %textarea#paywhatelse{:type => "text", :cols => "65", :name => "whatelse", :class => "text"} 
+    %input#paywhatelse{:type => "text", :cols => "65", :name => "whatelse", :class => "text"} 
 
     %button{:form => "none", :class => "toggle"} Enter Trial Code 
 
@@ -48,35 +48,35 @@
   %form{ :action => "/promo", :method => "post", :id => "promo"}
     %input{:type => "hidden", :name => "promo", :value => true}  
         
-    %p{:for => "line"} Your Headline
-    %input#promoheadline{:id => "headline",:type => "text", :name => "line", :class => "text"} #{params[:line]}   
+    %h3{:for => "line"} Your Headline
+    %textarea#promoheadline{:id => "headline",:type => "text", :name => "line", :class => "text"} #{params[:line]}   
 
 
-    %p{:for => "who"} Who Are You Writing For?
+    %h3{:for => "who"} Who Are You Writing For?
     %input#promowho{:type => "text", :name => "who", :class => "text"}
 
 
-    %p{:for => "what"} What do you want them to think/feel?
+    %h3{:for => "what"} What do you want them to think/feel?
     %input#promowhat{:type => "text", :name => "what", :class => "text"}
 
 
-    %p{:for => "tone"} What kind of tone should it have?
+    %h3{:for => "tone"} What kind of tone should it have?
     %input#promotone{:type => "text", :name => "tone", :class => "text"}
 
 
-    %p{:for => "name"} Your Name:
+    %h3{:for => "name"} Your Name:
     %input#promoname{:type => "text", :name => "email", :class => "text"}
 
 
-    %p{:for => "email"} Your Email:
+    %h3{:for => "email"} Your Email:
     %input#promoemail{:type => "text", :name => "email", :class => "text"}
 
 
-    %p{:for => "whatelse"} Anything else we should know?
+    %h3{:for => "whatelse"} Anything else we should know?
     <br>
-    %textarea#promowhatelse{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
+    %input#promowhatelse{:type => "textarea", :cols => "65", :name => "whatelse", :class => "textarea"} 
 
-    %p{:for => "promocode"} Enter Promo Code Here:
+    %h3{:for => "promocode"} Enter Trial Code Here:
     %input{:type => "text", :name => "promocode", :class => "text"}
 
 
