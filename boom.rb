@@ -23,12 +23,13 @@ end
 
 
 get '/blog' do
+  warn "splat = #{params[:splat]}"
 
     send_file File.join(File.dirname(__FILE__), '/public/blog/_site/index.html')
 end
 
 get '/blog/:title' do
-
+  warn "splat = #{params[:splat]}"
     post = File.basename(request.path)
     send_file File.join(File.dirname(__FILE__), "/public/blog/_site/blog/#{post}/index.html")
 end
