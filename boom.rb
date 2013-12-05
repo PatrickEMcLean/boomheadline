@@ -20,37 +20,6 @@ get '/blog/:title' do
   send_file File.join(File.dirname(__FILE__), "/public/blog/_site/blog/#{post}/index.html")
 end
 
-# def jekyll_blog(path, &missing_file_block)
-#           # @current_menu = "blog"
-#           # @title = "Blog - Derek Eder"
-        
-#           file_path = File.join(File.dirname(__FILE__), 'public/blog/_site',  path.gsub('/blog',''))
-#           logger.info file_path
-#           file_path = File.join(file_path, 'index.html') unless file_path =~ /\.[a-z]+$/i  
-#           logger.info file_path
-
-#           logger.info File.exist?(file_path)
-
-#           if File.exist?(file_path)
-#             file = File.open(file_path, "rb")
-#             contents = file.read
-#             file.close
-        
-#             if (file_path.include?('.xml') || file_path.include?('.css'))
-#               erb contents, :content_type => 'text/xml'
-#             else
-#               erb contents, :layout_engine => :haml
-#             end
-#           else
-#             haml :not_found
-#           end
-#         end
-
-#  get "/blog/?*" do
-#               logger.info request.path
-#               jekyll_blog(request.path) {404}
-#             end
-
 get '/' do
   haml :home, :layout => :main
 end
@@ -82,37 +51,6 @@ post '/promo' do
     end
   end
 
-  def create_ticket   
-  ticket = "\n\n\n"
-  ticket += "Their line: #{params[:line]}"
-  ticket += "\n\n\n\n"
-  ticket += "Wants them to: #{params[:what]}"
-  ticket += "\n\n\n"
-  ticket += "Is writing for: #{params[:who]}"
-  ticket += "\n\n\n"
-  ticket += "With this kind of tone: #{params[:tone]}"
-  ticket += "\n\n\n"
-  ticket += "Wants them to: #{params[:what]}"
-  ticket += "\n\n\n"
-  ticket += "And consider this: #{params[:whatelse]}"
-  ticket += "\n\n\n"
-
-  fd = Freshdesk.new(
-    "http://boomheadline.freshdesk.com/",
-    "patrickemclean@gmail.com",
-    "boompassword"
-  )
-  
-  ticket = fd.post_tickets(
-    :email => params[:email],
-    :description => ticket,
-    :name => params[:name],
-    :source => 2,
-    :priority => 2
-  )
-
-  logger.info ticket.inspect
-end
 end
 
 post '/charge' do
@@ -187,11 +125,13 @@ def code_is_valid?(code)
   end
 
   codesarray.each do |validcode|
+    logger.info validcode
     if code == validcode
       return true
+    else
+      return false
     end
   end
-  return false
 end 
 
 
