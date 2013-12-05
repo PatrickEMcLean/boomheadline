@@ -11,7 +11,27 @@ enable :logging
 set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
 set :stripe_secret_key, "sk_test_3UqpOIA4twxvA33Y1VQmLjOq"
 
-
+def jekyll_blog(path, &missing_file_block)
+          @current_menu = "blog"
+          @title = "Blog - Derek Eder"
+        
+          file_path = File.join(File.dirname(__FILE__), 'blog/_site',  path.gsub('/blog',''))
+          file_path = File.join(file_path, 'index.html') unless file_path =~ /\.[a-z]+$/i  
+        
+          if File.exist?(file_path)
+            file = File.open(file_path, "rb")
+            contents = file.read
+            file.close
+        
+            if (file_path.include?('.xml') || file_path.include?('.css'))
+              erb contents, :content_type => 'text/xml'
+            else
+              erb contents, :layout_engine => :haml
+            end
+          else
+            haml :not_found
+          end
+        end
 
 get '/' do
   haml :home, :layout => :main
@@ -21,18 +41,21 @@ get '/form' do
   haml :form, :layout => :main
 end
 
-
-get '/blog' do
-  warn "splat = #{params[:splat]}"
-
-    send_file File.join(File.dirname(__FILE__), '/public/blog/_site/index.html')
+get "/blog/?*" do
+              jekyll_blog(request.path) {404}
 end
 
-get '/blog/:title' do
-  warn "splat = #{params[:splat]}"
-    post = File.basename(request.path)
-    send_file File.join(File.dirname(__FILE__), "/public/blog/_site/blog/#{post}/index.html")
-end
+# get '/blog' do
+
+#     warn "splat = #{params[:splat]}"
+#     send_file File.join(File.dirname(__FILE__), '/public/blog/_site/index.html')
+# end
+
+# get '/blog/:title' do
+#   warn "splat = #{params[:splat]}"
+#     post = File.basename(request.path)
+#     send_file File.join(File.dirname(__FILE__), "/public/blog/_site/blog/#{post}/index.html")
+# end
 
 post '/entice' do
   haml :entice, :layout => :main
@@ -40,6 +63,10 @@ end
 
 get '/entice' do
   haml :entice, :layout => :main
+end
+
+not_found do
+  'This is nowhere to be found.'
 end
 
 post '/promo' do
@@ -164,8 +191,6 @@ def code_is_valid?(code)
   end
   return false
 end 
-
-
 
 
 __END__
