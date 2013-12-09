@@ -1,23 +1,21 @@
 
+.pagecontainer.twelve.columns.offset-by-three
+	%h1 Thanks for submitting a line. 
 
-%h1 Response
-
-- params.each do | key, value |
-	%p= key + " --- " + value
-	%hr
-
+	%p 
+		Rest assured, we are on it. Check your email for an email. We guarantee a response time of one business day. We're generally faster. But there are a lot of people to help and a limited number of us. 
 
 
+/ - params.each do | key, value |
+/ 	%p= key + " --- " + value
+/ 	%hr
 
 
-"#{params[:email]}"
 
-%h3 
-	Token
-	- params[:stripeToken]
 
-/ - customer = Stripe::Customer.create(:email => params[:stripeEmail], :card  => params[:stripeToken])
 
-/ - charge = Stripe::Charge.create(:amount => 2000, :currency => "usd", :card => params[:stripeToken], :description => "Boom! Headline.")
+/ "#{params[:email]}"
 
-/      
+/ %h3 
+/ 	Token
+/ 	- params[:stripeToken]

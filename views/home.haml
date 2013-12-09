@@ -5,12 +5,13 @@
 		%li We'll send you a better one back.
 		%li Expert copywriting, fast and easy.
 
+
 #other-section
 	#input-section.ten.columns.offset-by-three
 		#inputcontainer
 			.center
 				%form{:action => "/entice", :method => "post", :id =>"entice"}
-					%textarea.mainheadline{:cols => 130, :name => "line"} type your line here.
+					%textarea.mainheadline{:cols => 130, :name => "line", :placeholder => "Type your line here."}
 					.boom 
 					%button BOOM!
 

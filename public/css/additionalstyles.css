@@ -7,11 +7,43 @@
 /* Main Styles
 /*---------------------------------------------*/
 
+.pagecontainer {
+	padding-top: 1.5em;
+}
+
+.pagecontainer p {
+	font-size: 1.2em;
+}
+
+#menu {
+	
+	text-align: right;
+	padding-bottom: 3em;
+	font-size: 1.5em;
+}
+
+#menu {
+	padding-bottom: 3em;
+	font-size: 1.5em;
+}
+
+#menu ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+#menu li {
+
+    padding-right: .1em;
+	display:inline;
+
+}
+
 
 body {
 	font-family: 'Questrial', sans-serif;
 }
-
 
 
 

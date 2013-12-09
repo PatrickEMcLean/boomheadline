@@ -28,6 +28,10 @@ get '/form' do
   haml :form, :layout => :main
 end
 
+get '/response' do
+  haml :response, :layout => :main
+end
+
 post '/entice' do
   haml :entice, :layout => :main
 end
@@ -42,15 +46,16 @@ end
 
 post '/promo' do
 
-  if params[:promo]
+
     if code_is_valid?(params[:promocode])
+      logger.info params[:promocode] 
       create_ticket
       haml :response, :layout => :main
     else
       haml :badcode, :layout => :main
     end
-  end
 
+  
 end
 
 post '/charge' do
@@ -121,17 +126,13 @@ def code_is_valid?(code)
   codes=File.open('./codes.txt')
 
   codes.each do |line|
-    codesarray.push(line.chomp)
-  end
 
-  codesarray.each do |validcode|
-    logger.info validcode
-    if code == validcode
+    if line == code
       return true
-    else
-      return false
     end
+  logger.info "------FALSE!"
   end
+  return false
 end 
 
 
