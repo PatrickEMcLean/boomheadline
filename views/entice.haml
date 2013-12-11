@@ -47,9 +47,12 @@
 
     %input#paywhatelse{:type => "text", :cols => "65", :name => "whatelse", :class => "text"} 
 
-    %button{:form => "none", :class => "toggle"} Enter Trial Code 
+    %p Get a free trial code for <a href="http://eepurl.com/KyeZb" target="_blank">joining our email list</a>
 
-    %script{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.stripe_publishable_key, "data-amount" => "2000", "data-description" => "Boom! Headline.", "data-name" => "Boom! Headline."}
+    %button{:form => "none", :class => "toggle"} Enter Trial Code 
+ 
+
+    %script{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.stripe_publishable_key, "data-amount" => "500", "data-description" => "Boom! Headline.", "data-name" => "Boom! Headline."}
 
 #promo.offset-by-one
   %form{ :action => "/promo", :method => "post", :id => "promo"}
@@ -85,8 +88,10 @@
 
     %h3{:for => "promocode"} Enter Trial Code Here:
     %input{:type => "text", :name => "promocode", :class => "text"}
-
+    %p Get a free trial code for <a href="http://eepurl.com/KyeZb" target="_blank">joining our email list</a>
 
     %button{:form => "none", :class => "toggle"} Pay with Card
 
     %button.toggle Submit with Trial Code
+
+

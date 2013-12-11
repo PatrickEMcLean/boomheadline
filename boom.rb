@@ -11,6 +11,8 @@ enable :logging
 set :stripe_publishable_key, ENV['stripe_pk']
 set :stripe_secret_key, ENV['stripe_sk']
 
+# set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
+# set :stripe_secret_key, "sk_test_3UqpOIA4twxvA33Y1VQmLjOq"
 
 get '/blog' do
   send_file File.join(File.dirname(__FILE__), '/blog/_site/index.html')
