@@ -40,6 +40,34 @@
 
 }
 
+#blog h1 {
+	margin:auto;
+	text-align: center;
+	font-size:4.5em;
+	
+	font-weight: normal;
+}
+
+#blog h2 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-size:3em;
+}
+#blog h3 {
+	text-align: center;
+	padding: 0; 
+	margin: 0;
+	margin-top: 2em;
+	margin-bottom: -1em;
+}
+
+
+#blog .post {
+	margin:auto;
+	text-align: center
+}
 
 body {
 	font-family: 'Questrial', sans-serif;
@@ -128,8 +156,19 @@ h4 {
 
 
 footer {
-	background-color:grey;
+	border-top: 5px;
+	margin-top: 5em;
+	height: 25%;
 }
+
+
+iframe[seamless]{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+
 
 /* Input Styles
 /*---------------------------------------------*/

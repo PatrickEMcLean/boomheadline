@@ -3,3 +3,6 @@ markdown: redcarpet
 pygments: true
 permalink: /blog/:title
 baseurl: /blog 
+paginate: 10
+url: http://www.boomheadline.com
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Boom! Headline.</title>
+    <link>http://www.boomheadline.com</link>
+    <description>RSS feed for Boom! Headline.</description>
+    <pubDate>Mon, 09 Dec 2013 12:59:11 -0000</pubDate>
+    <item>
+      <title>ANother POst</title>
+      <link>http://www.boomheadline.com/blog/another-post</link>
+      <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/MxoWkgkPSiY&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+      <pubDate>Mon, 09 Dec 2013 12:59:11 -0000</pubDate>
+      <dc:date>2013-12-09T12:59:11Z</dc:date>
+    </item>
+    <item>
+      <title>How to Craft a Line</title>
+      <link>http://www.boomheadline.com/blog/welcome-to-jekyll</link>
+      <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/MxoWkgkPSiY&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+      <pubDate>Fri, 29 Nov 2013 12:59:11 -0000</pubDate>
+      <dc:date>2013-11-29T12:59:11Z</dc:date>
+    </item>
+    <dc:date>2013-12-09T12:59:11Z</dc:date>
+  </channel>
+</rss>

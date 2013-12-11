@@ -6,3 +6,4 @@ gem 'haml', "~> 4.0.4"
 gem 'freshdesk'
 gem 'httparty'
 gem 'haml-contrib'
+gem 'jekyll-haml'

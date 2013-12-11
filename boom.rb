@@ -12,12 +12,16 @@ set :stripe_publishable_key, "pk_test_CFehYFpcPnoGuWeZwA6TqrWS"
 set :stripe_secret_key, "sk_test_3UqpOIA4twxvA33Y1VQmLjOq"
 
 get '/blog' do
-  send_file File.join(File.dirname(__FILE__), '/public/blog/_site/index.html')
+  send_file File.join(File.dirname(__FILE__), '/blog/_site/index.html')
 end
 
 get '/blog/:title' do
   post = File.basename(request.path)
-  send_file File.join(File.dirname(__FILE__), "/public/blog/_site/blog/#{post}/index.html")
+  send_file File.join(File.dirname(__FILE__), "/blog/_site/blog/#{post}/index.html")
+end
+
+get '/feed' do
+  send_file File.join(File.dirname(__FILE__), "/blog/_site/rss.xml")
 end
 
 get '/' do
@@ -45,10 +49,8 @@ not_found do
 end
 
 post '/promo' do
-
-
     if code_is_valid?(params[:promocode])
-      logger.info params[:promocode] 
+
       create_ticket
       haml :response, :layout => :main
     else
@@ -74,16 +76,14 @@ end
 
 def create_charge
   Stripe.api_key = settings.stripe_secret_key
-  logger.info "Stripe api key"
-  logger.info Stripe.api_key
+
   charge = Stripe::Charge.create(
     :amount => 2000,
     :currency => "usd",
     :card => params[:stripeToken],
     :description => "Boom! Headline."
   )
-  logger.info "Charge record"
-  logger.info charge.inspect
+ 
 end
 
 def create_ticket
@@ -114,7 +114,7 @@ def create_ticket
     :priority => 2
   )
 
-  logger.info ticket.inspect
+
 end
 
 get '/error' do
@@ -130,7 +130,6 @@ def code_is_valid?(code)
     if line == code
       return true
     end
-  logger.info "------FALSE!"
   end
   return false
 end 
