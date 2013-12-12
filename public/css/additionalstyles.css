@@ -7,6 +7,13 @@
 /* Main Styles
 /*---------------------------------------------*/
 
+#video-section{ 
+/*	width:430px;*/
+	margin:auto;
+	padding-bottom: 2em;
+	text-align: center;
+}
+
 .pagecontainer {
 	padding-top: 1.5em;
 }
